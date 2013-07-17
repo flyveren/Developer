@@ -1,0 +1,44 @@
+# Disable directory listing
+Options All -Indexes
+
+<files .htaccess>
+    order allow,deny
+    deny from all
+</files>
+
+<files wp-config.php>
+    order allow,deny
+    deny from all
+</files>
+
+RewriteEngine On
+RewriteBase /
+
+# Most of following comes from
+# http://bloggertowp.org/migrate-from-blogger-to-wordpress-best-tutorial/
+
+# Redirect feeds from labels
+RewriteRule feeds/posts/default/-/(.*) category/$1/feed/ [L,R=301]
+
+# Redirect older blogger RSS feeds
+RewriteRule rss.xml feed/ [L,R=301]
+RewriteCond %{QUERY_STRING} ^alt=rss$
+RewriteRule feeds/posts/default feed/? [L,R=301]
+
+# Redirect older blogger ATOM feeds
+RewriteRule atom.xml feed/atom/ [L,R=301]
+RewriteRule feeds/posts/default feed/atom/ [L,R=301]
+
+# Redirect older blogger comments feeds
+RewriteRule feeds/comments/default comments/feed/ [L,R=301]
+
+# Redirect archives
+RewriteRule ^([0-9]{4})_([0-9]{1,2})_([0-9]{1,2})_archive\.html$ $1/$2 [L,R=301]
+
+# Redirect labels
+RewriteRule ^search/label/(.*)$ category/$1/ [L,R=301]
+
+# This is WP default: makes pretty URLs possible.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
