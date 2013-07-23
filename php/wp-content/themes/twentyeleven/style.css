@@ -2717,3 +2717,15 @@ p.comment-form-comment {
 #ie8 section.feature-image.large img {
 	width: 100%;
 }
+
+
+
+#background{
+	position: absolute;
+}
+#twirl{
+	position: absolute;
+}
+#front{
+	position: absolute;
+}
