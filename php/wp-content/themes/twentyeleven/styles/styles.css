@@ -1,0 +1,94 @@
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: "untitled-font-1";
+  src:url("fonts/untitled-font-1.eot");
+  src:url("fonts/untitled-font-1.eot?#iefix") format("embedded-opentype"),
+    url("fonts/untitled-font-1.ttf") format("truetype"),
+    url("fonts/untitled-font-1.svg#untitled-font-1") format("svg"),
+    url("fonts/untitled-font-1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "untitled-font-1";
+  content: attr(data-icon);
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none !important;
+  speak: none;
+  display: inline-block;
+  text-decoration: none;
+  width: 1em;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "untitled-font-1";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none !important;
+  speak: none;
+  display: inline-block;
+  text-decoration: none;
+  width: 1em;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.icon-bubbles-talk-1:before {
+  content: "a";
+}
+
+.icon-facebook-alt:before {
+  content: "c";
+}
+
+.icon-home-1:before {
+  content: "d";
+}
+
+.icon-mailbox-1:before {
+  content: "b";
+}
+
+.icon-letter-mail-1:before {
+  content: "e";
+}
+
+.icon-text-document:before {
+  content: "f";
+}
+
+.icon-flag-mark:before {
+  content: "g";
+}
+
+.icon-eye-view-1:before {
+  content: "h";
+}
+
+.icon-dribbble:before {
+  content: "i";
+}
+
+.icon-bookmark-file-1:before {
+  content: "j";
+}
+
+.icon-camera-1:before {
+  content: "k";
+}
+
+.icon-advertising-megaphone-2:before {
+  content: "l";
+}
+
