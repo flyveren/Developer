@@ -12,7 +12,8 @@
  * @subpackage Twenty_Eleven
  */
 ?>
- 
+ <?php get_header(); ?>
+
 <div id="contaier">	
 <div id="baggrund"><img id="baggrund-img" src="<?php echo get_bloginfo('template_directory');?>/images/pauli_back.jpg"/></div>
 <div id="twirl"><img id="twirl-img" src="<?php echo get_bloginfo('template_directory');?>/images/pauli_twirl.png"/></div>
