@@ -17,6 +17,17 @@ Text Domain: twentyeleven
 html{
 	background: #000;
 }
+body{
+	margin: 0px;
+}
+
+#container{
+	width: 900px;
+	left: 0px;
+	right: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 #baggrund{
 	position: absolute;
@@ -38,6 +49,7 @@ html{
 	height: 900px;
 	margin:auto auto;
 }
+
 #front{
 	position: absolute;
 	float: left;
