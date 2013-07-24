@@ -48,6 +48,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="<?php echo get_bloginfo('template_directory');?>/js/jQueryRotate.js" type="text/javascript"></script>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -65,6 +67,16 @@
 	 */
 	wp_head();
 ?>
+
+<script type="text/javascript">
+	var angle = 0;
+setInterval(function(){
+      angle+=0.3;
+     $("#twirl-img").rotate(angle);
+},100);
+</script>
+
+
 </head>
 
 <body <?php body_class(); ?>>
