@@ -50,19 +50,10 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="<?php echo get_bloginfo('template_directory');?>/js/jQueryRotate.js" type="text/javascript"></script>
-<script src="<?php echo get_bloginfo('template_directory');?>/js/Tween.js" type="text/javascript"></script>
-<script src="<?php echo get_bloginfo('template_directory');?>/js/RequestAnimationFrame.js" type="text/javascript"></script>
-
-
-
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory');?>/css/fontello.css">
 <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory');?>/css/animation.css"><!--[if IE 7]>
 <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory');?>/css/fontello-ie7.css"><![endif]-->
-
-
-
-
-
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
@@ -81,7 +72,7 @@
 	wp_head();
 ?>
 
-
+<!-- fontello script -->
 <script>
   function toggleCodes(on) {
     var obj = document.getElementById('icons');
@@ -92,11 +83,9 @@
       obj.className = obj.className.replace(' codesOn', '');
     }
   }
-  
 </script>
 
-
-
+<!-- background rotation pauli -->
 <script type="text/javascript">
 
 var angle = 0;
@@ -104,11 +93,7 @@ setInterval(function(){
       angle+=0.1;
      $("#twirl-img").rotate(angle);
 },30);
-
 </script>
-
-
-
 </head>
 
 <body <?php body_class(); ?>>

@@ -17,7 +17,7 @@
 <a href="http://frem.freeforums.org/" class="icons"><i class="icon-star"></i>Forum</a>
 <a href="mailto:mail@paulisroedder.dk" target="_top" class="icons"><i class="icon-mail-alt"></i>Kontakt</a>
 <a href="https://www.facebook.com/Paulisrodder" class="icons"><i class="icon-facebook-squared"></i>Facebook</a>
-<div id="target" data-icon="i" class="icons icon"></div>
+<div id="galleri" class="icons"><i class="icon-camera"></i>Galleri</div>
 </div>
 
 
@@ -40,3 +40,17 @@ $do_not_duplicate = $post->ID; ?>
             </p>
 <?php endwhile; ?>
 </div>
+
+
+<script type="text/javascript">
+$("#galleri").click(function() {
+	var midt = $(window).width()/2-380;
+	var om_klubben = document.getElementById("om_klubben");
+	var position = $('#om_klubben').position();
+	if(position.left < 0){
+	TweenLite.to(om_klubben, 0.5, {left:midt, ease:Power1.easeInOut});
+}else{
+	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
+}
+});
+</script>
