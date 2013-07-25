@@ -95,7 +95,17 @@ body{
 	top:120px;
 	padding:0px 30px 20px 30px;
 }
-
+#galleriside{
+	position: absolute;
+	width:700px;
+	z-index: 4;
+	overflow: hidden;
+	background: #fff;
+	opacity: 0.9;
+	left:-2000px;
+	top:120px;
+	padding:0px 30px 20px 30px;
+}
 #menu{
 	position: relative;
 	margin-right:20%;

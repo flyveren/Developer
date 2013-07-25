@@ -18,6 +18,7 @@
 <div class="icons" id="megafon"><i class="icon-megaphone"></i></div>
 <div id="email" class="icons"><i class="icon-mail-alt"></i></div>
 <div id="galleri" class="icons"><i class="icon-camera"></i></div>
+<div id="klubben" class="icons"><i class="icon-heart"></i></div>
 </div>
 
 
@@ -42,7 +43,7 @@ $do_not_duplicate = $post->ID; ?>
 </div>
 
 <div id="sange">
-<?php $my_query = new WP_Query("showposts=1&post_type=page&page_id=7");
+<?php $my_query = new WP_Query("showposts=1&post_type=page&page_id=102");
 while ($my_query->have_posts()) : $my_query->the_post();
 $do_not_duplicate = $post->ID; ?>
             <h1>
@@ -55,7 +56,7 @@ $do_not_duplicate = $post->ID; ?>
 </div>
 
 <div id="emailside">
-<?php $my_query = new WP_Query("showposts=1&post_type=page&page_id=11");
+<?php $my_query = new WP_Query("showposts=1&post_type=page&page_id=57");
 while ($my_query->have_posts()) : $my_query->the_post();
 $do_not_duplicate = $post->ID; ?>
             <h1>
@@ -66,11 +67,37 @@ $do_not_duplicate = $post->ID; ?>
             </p>
 <?php endwhile; ?>
 </div>
-
+<div id="galleriside">
+<?php $my_query = new WP_Query("showposts=1&post_type=page&page_id=16");
+while ($my_query->have_posts()) : $my_query->the_post();
+$do_not_duplicate = $post->ID; ?>
+            <h1>
+                <?php the_title(); ?>
+            </h1>
+            <p>
+            	<?php echo do_shortcode('[nggalbum id=1]');?>
+            </p>
+<?php endwhile; ?>
+</div>
 
 
 <script type="text/javascript">
 $("#galleri").click(function() {
+	var midtdoc = $("#galleriside").width()/2+30;
+	var midt = $(window).width()/2-midtdoc;
+	var galleriside = document.getElementById("galleriside");
+	var position = $('#galleriside').position();
+	if(position.left < 0){
+	TweenLite.to(galleriside, 0.5, {left:midt, ease:Power1.easeInOut});
+	TweenLite.to(sange, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(emailside, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
+}else{
+	TweenLite.to(galleriside, 0.5, {left:-2000, ease:Power1.easeInOut});
+}
+});
+
+$("#klubben").click(function() {
 	var midtdoc = $("#om_klubben").width()/2+30;
 	var midt = $(window).width()/2-midtdoc;
 	var om_klubben = document.getElementById("om_klubben");
@@ -79,6 +106,7 @@ $("#galleri").click(function() {
 	TweenLite.to(om_klubben, 0.5, {left:midt, ease:Power1.easeInOut});
 	TweenLite.to(sange, 0.5, {left:-2000, ease:Power1.easeInOut});
 	TweenLite.to(emailside, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(galleriside, 0.5, {left:-2000, ease:Power1.easeInOut});
 }else{
 	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
 }
@@ -93,6 +121,7 @@ $("#megafon").click(function() {
 	TweenLite.to(sange, 0.5, {left:midt, ease:Power1.easeInOut});
 	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
 	TweenLite.to(emailside, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(galleriside, 0.5, {left:-2000, ease:Power1.easeInOut});
 }else{
 	TweenLite.to(sange, 0.5, {left:-2000, ease:Power1.easeInOut});
 }
@@ -107,6 +136,7 @@ $("#email").click(function() {
 	TweenLite.to(emailside, 0.5, {left:midt, ease:Power1.easeInOut});
 	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
 	TweenLite.to(sange, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(galleriside, 0.5, {left:-2000, ease:Power1.easeInOut});
 }else{
 	TweenLite.to(emailside, 0.5, {left:-2000, ease:Power1.easeInOut});
 }
