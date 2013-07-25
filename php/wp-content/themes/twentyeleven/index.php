@@ -14,11 +14,12 @@
 ?>
  <?php get_header(); ?>
 <div id="menu">
-<a href="http://frem.freeforums.org/"><div data-icon="a" class="icons"></div></a>
-<a href="mailto:mail@paulisroedder.dk" target="_top"><div data-icon="b" class="icons"></div></a>
-<a href="https://www.facebook.com/Paulisrodder"><div data-icon="c" class="icons"></div></a>
-<div data-icon="i" class="icons"></div>
+<a href="http://frem.freeforums.org/" class="icons"><i class="icon-star"></i>Forum</a>
+<a href="mailto:mail@paulisroedder.dk" target="_top" class="icons"><i class="icon-mail-alt"></i>Kontakt</a>
+<a href="https://www.facebook.com/Paulisrodder" class="icons"><i class="icon-facebook-squared"></i>Facebook</a>
+<div id="target" data-icon="i" class="icons icon"></div>
 </div>
+
 
 <div id="container">	
 <div id="baggrund"><img id="baggrund-img" src="<?php echo get_bloginfo('template_directory');?>/images/pauli_back.jpg"/></div>

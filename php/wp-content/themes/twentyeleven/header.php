@@ -47,12 +47,21 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="stylesheet" href="<?php echo get_bloginfo('template_directory');?>/styles/styles.css">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="<?php echo get_bloginfo('template_directory');?>/js/jQueryRotate.js" type="text/javascript"></script>
 <script src="<?php echo get_bloginfo('template_directory');?>/js/Tween.js" type="text/javascript"></script>
 <script src="<?php echo get_bloginfo('template_directory');?>/js/RequestAnimationFrame.js" type="text/javascript"></script>
+
+
+
+<link rel="stylesheet" href="<?php echo get_bloginfo('template_directory');?>/css/fontello.css">
+<link rel="stylesheet" href="<?php echo get_bloginfo('template_directory');?>/css/animation.css"><!--[if IE 7]>
+<link rel="stylesheet" href="<?php echo get_bloginfo('template_directory');?>/css/fontello-ie7.css"><![endif]-->
+
+
+
+
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -71,6 +80,22 @@
 	 */
 	wp_head();
 ?>
+
+
+<script>
+  function toggleCodes(on) {
+    var obj = document.getElementById('icons');
+    
+    if (on) {
+      obj.className += ' codesOn';
+    } else {
+      obj.className = obj.className.replace(' codesOn', '');
+    }
+  }
+  
+</script>
+
+
 
 <script type="text/javascript">
 
