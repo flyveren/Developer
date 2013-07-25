@@ -14,10 +14,10 @@
 ?>
  <?php get_header(); ?>
 <div id="menu">
-<a href="http://frem.freeforums.org/" class="icons"><i class="icon-star"></i>Forum</a>
-<a href="mailto:mail@paulisroedder.dk" target="_top" class="icons"><i class="icon-mail-alt"></i>Kontakt</a>
-<a href="https://www.facebook.com/Paulisrodder" class="icons"><i class="icon-facebook-squared"></i>Facebook</a>
-<div id="galleri" class="icons"><i class="icon-camera"></i>Galleri</div>
+<a href="https://www.facebook.com/Paulisrodder" class="icons"><i class="icon-facebook-squared"></i></a>
+<div class="icons" id="megafon"><i class="icon-megaphone"></i></div>
+<div id="email" class="icons"><i class="icon-mail-alt"></i></div>
+<div id="galleri" class="icons"><i class="icon-camera"></i></div>
 </div>
 
 
@@ -41,17 +41,74 @@ $do_not_duplicate = $post->ID; ?>
 <?php endwhile; ?>
 </div>
 
+<div id="sange">
+<?php $my_query = new WP_Query("showposts=1&post_type=page&page_id=7");
+while ($my_query->have_posts()) : $my_query->the_post();
+$do_not_duplicate = $post->ID; ?>
+            <h1>
+                <?php the_title(); ?>
+            </h1>
+            <p>
+            	<?php the_content(); ?>
+            </p>
+<?php endwhile; ?>
+</div>
+
+<div id="emailside">
+<?php $my_query = new WP_Query("showposts=1&post_type=page&page_id=11");
+while ($my_query->have_posts()) : $my_query->the_post();
+$do_not_duplicate = $post->ID; ?>
+            <h1>
+                <?php the_title(); ?>
+            </h1>
+            <p>
+            	<?php the_content(); ?>
+            </p>
+<?php endwhile; ?>
+</div>
+
+
 
 <script type="text/javascript">
 $("#galleri").click(function() {
-	var midtdoc = $("#om_klubben").width()/2;
+	var midtdoc = $("#om_klubben").width()/2+30;
 	var midt = $(window).width()/2-midtdoc;
 	var om_klubben = document.getElementById("om_klubben");
 	var position = $('#om_klubben').position();
 	if(position.left < 0){
 	TweenLite.to(om_klubben, 0.5, {left:midt, ease:Power1.easeInOut});
+	TweenLite.to(sange, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(emailside, 0.5, {left:-2000, ease:Power1.easeInOut});
 }else{
 	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
+}
+});
+
+$("#megafon").click(function() {
+	var midtdoc = $("#sange").width()/2+30;
+	var midt = $(window).width()/2-midtdoc;
+	var sange = document.getElementById("sange");
+	var position = $('#sange').position();
+	if(position.left < 0){
+	TweenLite.to(sange, 0.5, {left:midt, ease:Power1.easeInOut});
+	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(emailside, 0.5, {left:-2000, ease:Power1.easeInOut});
+}else{
+	TweenLite.to(sange, 0.5, {left:-2000, ease:Power1.easeInOut});
+}
+});
+
+$("#email").click(function() {
+	var midtdoc = $("#emailside").width()/2+30;
+	var midt = $(window).width()/2-midtdoc;
+	var emailside = document.getElementById("emailside");
+	var position = $('#emailside').position();
+	if(position.left < 0){
+	TweenLite.to(emailside, 0.5, {left:midt, ease:Power1.easeInOut});
+	TweenLite.to(om_klubben, 0.5, {left:-2000, ease:Power1.easeInOut});
+	TweenLite.to(sange, 0.5, {left:-2000, ease:Power1.easeInOut});
+}else{
+	TweenLite.to(emailside, 0.5, {left:-2000, ease:Power1.easeInOut});
 }
 });
 </script>

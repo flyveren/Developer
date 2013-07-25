@@ -66,24 +66,41 @@ body{
 	z-index: 4;
 	overflow: hidden;
 	background: #fff;
+	opacity: 0.9;
 	left:-2000px;
-	top:60px;
+	top:80px;
+	padding:0px 30px 20px 30px;
 }
 
-
-#knap{
-	width:100px;
-	height:60px;
-	background: blue;
+#sange{
 	position: absolute;
-	margin-top: 10px;
-	margin-left: 10px;
+	width:700px;
+	z-index: 4;
+	overflow: hidden;
+	background: #fff;
+	opacity: 0.9;
+	left:-2000px;
+	top:80px;
+	padding:0px 30px 20px 30px;
+}
+
+#emailside{
+	position: absolute;
+	width:700px;
+	z-index: 4;
+	overflow: hidden;
+	background: #fff;
+	opacity: 0.9;
+	left:-2000px;
+	top:80px;
+	padding:0px 30px 20px 30px;
 }
 
 #menu{
 	position: relative;
-	margin-right:100px;
+	margin-right:20%;
 	z-index:999;
+	margin-top: 10px;
 }
 
 .icons{
@@ -92,5 +109,6 @@ body{
 	color: #666;
 	font-size:18px;
 	text-decoration: none;
+	padding: 0px 10px 0px 0px;
 }
 
