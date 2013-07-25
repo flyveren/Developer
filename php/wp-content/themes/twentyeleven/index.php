@@ -45,7 +45,7 @@ $do_not_duplicate = $post->ID; ?>
 <script type="text/javascript">
 $("#galleri").click(function() {
 	var midtdoc = $("#om_klubben").width()/2;
-	var midt = $("html").width()/2-midtdoc;
+	var midt = $(window).width()/2-midtdoc;
 	var om_klubben = document.getElementById("om_klubben");
 	var position = $('#om_klubben').position();
 	if(position.left < 0){
